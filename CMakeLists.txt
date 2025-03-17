@@ -19,6 +19,8 @@ find_package(visualization_msgs REQUIRED)
 set(SRC
         src/nodes/io_node.cpp
         include/nodes/io_node.hpp
+        src/nodes/LineSensorNode.cpp
+        include/nodes/LineSensorNode.hpp
 )
 
 set(AMENT_LIBS rclcpp std_msgs sensor_msgs cv_bridge image_transport)

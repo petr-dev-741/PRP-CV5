@@ -1,0 +1,4 @@
+minL = {uint} 19
+maxL = {uint} 1020
+minR = {uint} 24
+maxR = {uint} 1023

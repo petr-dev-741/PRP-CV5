@@ -14,6 +14,6 @@
 -- Found image_transport: 3.1.10 (/opt/ros/humble/share/image_transport/cmake)
 -- Found visualization_msgs: 4.2.4 (/opt/ros/humble/share/visualization_msgs/cmake)
 WARNING: Package name "PRP_CV5" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
--- Configuring done (1.1s)
+-- Configuring done (1.0s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/petr/CLionProjects/PRP_CV5/cmake-build-debug
