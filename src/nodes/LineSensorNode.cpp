@@ -30,8 +30,5 @@ namespace nodes {
         }
         /*(msg->data[0] < 500 && msg->data[1] < 500)*/
         return 0; // straight
-
-
-
     }
 }
