@@ -9,10 +9,10 @@ int main(int argc, char* argv[]) {
     rclcpp::init(argc, argv);
     auto executor = std::make_shared<rclcpp::executors::MultiThreadedExecutor>();
 
-    auto IOnodeClass = std::make_shared<nodes::IoNode>();
+//    auto IOnodeClass = std::make_shared<nodes::IoNode>();
     auto IOnodeLineSensor = std::make_shared<nodes::LineSensorNode>();
 
-    executor->add_node(IOnodeClass);
+//    executor->add_node(IOnodeClass);
     executor->add_node(IOnodeLineSensor);
 
     std::cout << "Hello World!" << std::endl;

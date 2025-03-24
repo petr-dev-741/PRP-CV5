@@ -1,4 +1,4 @@
-# Install script for directory: /home/petr/CLionProjects/PRP_CV5
+# Install script for directory: /home/korny/CLionProjects/PRP-CV5
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,12 +49,12 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/PRP_CV5/PRP_CV5"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/PRP_CV5" TYPE EXECUTABLE FILES "/home/petr/CLionProjects/PRP_CV5/cmake-build-debug/PRP_CV5")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/PRP_CV5" TYPE EXECUTABLE FILES "/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/PRP_CV5")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/PRP_CV5/PRP_CV5" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/PRP_CV5/PRP_CV5")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/PRP_CV5/PRP_CV5"
-         OLD_RPATH "/usr/local/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:"
+         OLD_RPATH "/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/PRP_CV5/PRP_CV5")
@@ -63,15 +63,15 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/petr/CLionProjects/PRP_CV5/cmake-build-debug/CMakeFiles/PRP_CV5.dir/install-cxx-module-bmi-Debug.cmake" OPTIONAL)
+  include("/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/CMakeFiles/PRP_CV5.dir/install-cxx-module-bmi-Debug.cmake" OPTIONAL)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/petr/CLionProjects/PRP_CV5/cmake-build-debug/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/PRP_CV5")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/PRP_CV5")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/petr/CLionProjects/PRP_CV5/cmake-build-debug/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/PRP_CV5")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/PRP_CV5")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -79,7 +79,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/PRP_CV5/environment" TYPE FILE FILES "/home/petr/CLionProjects/PRP_CV5/cmake-build-debug/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/PRP_CV5/environment" TYPE FILE FILES "/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -87,47 +87,47 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/PRP_CV5/environment" TYPE FILE FILES "/home/petr/CLionProjects/PRP_CV5/cmake-build-debug/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/PRP_CV5/environment" TYPE FILE FILES "/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/PRP_CV5" TYPE FILE FILES "/home/petr/CLionProjects/PRP_CV5/cmake-build-debug/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/PRP_CV5" TYPE FILE FILES "/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/PRP_CV5" TYPE FILE FILES "/home/petr/CLionProjects/PRP_CV5/cmake-build-debug/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/PRP_CV5" TYPE FILE FILES "/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/PRP_CV5" TYPE FILE FILES "/home/petr/CLionProjects/PRP_CV5/cmake-build-debug/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/PRP_CV5" TYPE FILE FILES "/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/PRP_CV5" TYPE FILE FILES "/home/petr/CLionProjects/PRP_CV5/cmake-build-debug/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/PRP_CV5" TYPE FILE FILES "/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/PRP_CV5" TYPE FILE FILES "/home/petr/CLionProjects/PRP_CV5/cmake-build-debug/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/PRP_CV5" TYPE FILE FILES "/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/petr/CLionProjects/PRP_CV5/cmake-build-debug/ament_cmake_index/share/ament_index/resource_index/packages/PRP_CV5")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/ament_cmake_index/share/ament_index/resource_index/packages/PRP_CV5")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/PRP_CV5/cmake" TYPE FILE FILES
-    "/home/petr/CLionProjects/PRP_CV5/cmake-build-debug/ament_cmake_core/PRP_CV5Config.cmake"
-    "/home/petr/CLionProjects/PRP_CV5/cmake-build-debug/ament_cmake_core/PRP_CV5Config-version.cmake"
+    "/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/ament_cmake_core/PRP_CV5Config.cmake"
+    "/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/ament_cmake_core/PRP_CV5Config-version.cmake"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/PRP_CV5" TYPE FILE FILES "/home/petr/CLionProjects/PRP_CV5/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/PRP_CV5" TYPE FILE FILES "/home/korny/CLionProjects/PRP-CV5/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/petr/CLionProjects/PRP_CV5/cmake-build-debug/tests/cmake_install.cmake")
+  include("/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/tests/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -145,6 +145,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "/home/petr/CLionProjects/PRP_CV5/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

@@ -1,4 +1,4 @@
-# Install script for directory: /home/petr/CLionProjects/PRP_CV5/tests
+# Install script for directory: /home/korny/CLionProjects/PRP-CV5/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
