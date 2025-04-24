@@ -21,6 +21,8 @@ set(SRC
         include/nodes/io_node.hpp
         src/nodes/LineSensorNode.cpp
         include/nodes/LineSensorNode.hpp
+        include/rviz_example_class.hpp
+        include/algorithms/pid.hpp
 )
 
 set(AMENT_LIBS rclcpp std_msgs sensor_msgs cv_bridge image_transport)

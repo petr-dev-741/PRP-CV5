@@ -10,6 +10,8 @@ namespace Topic {
     const std::string encoders = "/bpc_prp_robot/encoders";
     const std::string motor_speeds = "/bpc_prp_robot/set_motor_speeds";
     const std::string line_sensors = "/bpc_prp_robot/line_sensors";
+    const std::string lidar = "/bpc_prp_robot/lidar";
+    const std::string ultraSound_sensors = "/bpc_prp_robot/motors";
 };
 
 namespace Frame {
