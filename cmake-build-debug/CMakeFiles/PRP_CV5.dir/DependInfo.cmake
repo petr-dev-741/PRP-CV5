@@ -9,8 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/korny/CLionProjects/PRP-CV5/src/main.cpp" "CMakeFiles/PRP_CV5.dir/src/main.cpp.o" "gcc" "CMakeFiles/PRP_CV5.dir/src/main.cpp.o.d"
-  "/home/korny/CLionProjects/PRP-CV5/src/nodes/LineSensorNode.cpp" "CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.o" "gcc" "CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.o.d"
-  "/home/korny/CLionProjects/PRP-CV5/src/nodes/io_node.cpp" "CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.o" "gcc" "CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.o.d"
+  "/home/korny/CLionProjects/PRP-CV5/src/nodes/imu_node.cpp" "CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.o" "gcc" "CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

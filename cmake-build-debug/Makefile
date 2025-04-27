@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/326/bin/cmake/linux/x64/bin/cmake
+CMAKE_COMMAND = /snap/clion/332/bin/cmake/linux/x64/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/326/bin/cmake/linux/x64/bin/cmake -E rm -f
+RM = /snap/clion/332/bin/cmake/linux/x64/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/korny/CLionProjects/PRP-CV5/cmake-build-debug
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/snap/clion/326/bin/cmake/linux/x64/bin/ctest --force-new-ctest-process $(ARGS)
+	/snap/clion/332/bin/cmake/linux/x64/bin/ctest --force-new-ctest-process $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -78,7 +78,7 @@ test/fast: test
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
-	/snap/clion/326/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/332/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -88,7 +88,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/snap/clion/326/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/332/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -107,37 +107,37 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/snap/clion/326/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
+	/snap/clion/332/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/snap/clion/326/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
+	/snap/clion/332/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/snap/clion/326/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/snap/clion/332/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/snap/clion/326/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/snap/clion/332/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/snap/clion/326/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/snap/clion/332/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/snap/clion/326/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/snap/clion/332/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # The main all target
@@ -234,53 +234,29 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PRP_CV5.dir/build.make CMakeFiles/PRP_CV5.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/nodes/LineSensorNode.o: src/nodes/LineSensorNode.cpp.o
-.PHONY : src/nodes/LineSensorNode.o
+src/nodes/imu_node.o: src/nodes/imu_node.cpp.o
+.PHONY : src/nodes/imu_node.o
 
 # target to build an object file
-src/nodes/LineSensorNode.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PRP_CV5.dir/build.make CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.o
-.PHONY : src/nodes/LineSensorNode.cpp.o
+src/nodes/imu_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PRP_CV5.dir/build.make CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.o
+.PHONY : src/nodes/imu_node.cpp.o
 
-src/nodes/LineSensorNode.i: src/nodes/LineSensorNode.cpp.i
-.PHONY : src/nodes/LineSensorNode.i
-
-# target to preprocess a source file
-src/nodes/LineSensorNode.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PRP_CV5.dir/build.make CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.i
-.PHONY : src/nodes/LineSensorNode.cpp.i
-
-src/nodes/LineSensorNode.s: src/nodes/LineSensorNode.cpp.s
-.PHONY : src/nodes/LineSensorNode.s
-
-# target to generate assembly for a file
-src/nodes/LineSensorNode.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PRP_CV5.dir/build.make CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.s
-.PHONY : src/nodes/LineSensorNode.cpp.s
-
-src/nodes/io_node.o: src/nodes/io_node.cpp.o
-.PHONY : src/nodes/io_node.o
-
-# target to build an object file
-src/nodes/io_node.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PRP_CV5.dir/build.make CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.o
-.PHONY : src/nodes/io_node.cpp.o
-
-src/nodes/io_node.i: src/nodes/io_node.cpp.i
-.PHONY : src/nodes/io_node.i
+src/nodes/imu_node.i: src/nodes/imu_node.cpp.i
+.PHONY : src/nodes/imu_node.i
 
 # target to preprocess a source file
-src/nodes/io_node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PRP_CV5.dir/build.make CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.i
-.PHONY : src/nodes/io_node.cpp.i
+src/nodes/imu_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PRP_CV5.dir/build.make CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.i
+.PHONY : src/nodes/imu_node.cpp.i
 
-src/nodes/io_node.s: src/nodes/io_node.cpp.s
-.PHONY : src/nodes/io_node.s
+src/nodes/imu_node.s: src/nodes/imu_node.cpp.s
+.PHONY : src/nodes/imu_node.s
 
 # target to generate assembly for a file
-src/nodes/io_node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PRP_CV5.dir/build.make CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.s
-.PHONY : src/nodes/io_node.cpp.s
+src/nodes/imu_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PRP_CV5.dir/build.make CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.s
+.PHONY : src/nodes/imu_node.cpp.s
 
 # Help Target
 help:
@@ -301,12 +277,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/nodes/LineSensorNode.o"
-	@echo "... src/nodes/LineSensorNode.i"
-	@echo "... src/nodes/LineSensorNode.s"
-	@echo "... src/nodes/io_node.o"
-	@echo "... src/nodes/io_node.i"
-	@echo "... src/nodes/io_node.s"
+	@echo "... src/nodes/imu_node.o"
+	@echo "... src/nodes/imu_node.i"
+	@echo "... src/nodes/imu_node.s"
 .PHONY : help
 
 

@@ -639,10 +639,9 @@ CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.o: \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8_multi_array__builder.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8_multi_array__traits.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8_multi_array__type_support.hpp \
- /home/korny/CLionProjects/PRP-CV5/include/helper.hpp \
- /home/korny/CLionProjects/PRP-CV5/include/nodes/LineSensorNode.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/u_int16_multi_array.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int16_multi_array__struct.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int16_multi_array__builder.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int16_multi_array__traits.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int16_multi_array__type_support.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int16_multi_array__type_support.hpp \
+ /home/korny/CLionProjects/PRP-CV5/include/helper.hpp

@@ -116,7 +116,7 @@ CMakeFiles/PRP_CV5.dir/src/main.cpp.o: \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h \
- /home/korny/CLionProjects/PRP-CV5/include/nodes/io_node.hpp \
+ /home/korny/CLionProjects/PRP-CV5/include/nodes/imu_node.hpp \
  /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp \
  /usr/include/c++/11/csignal /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
@@ -625,23 +625,29 @@ CMakeFiles/PRP_CV5.dir/src/main.cpp.o: \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8__traits.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8__type_support.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/u_int32_multi_array.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int32_multi_array__struct.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__struct.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_dimension__struct.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int32_multi_array__builder.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int32_multi_array__traits.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__traits.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_dimension__traits.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int32_multi_array__type_support.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/u_int8_multi_array.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8_multi_array__struct.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__struct.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_dimension__struct.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8_multi_array__builder.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8_multi_array__traits.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__traits.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_dimension__traits.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8_multi_array__type_support.hpp \
- /home/korny/CLionProjects/PRP-CV5/include/nodes/LineSensorNode.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/u_int16_multi_array.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int16_multi_array__struct.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int16_multi_array__builder.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int16_multi_array__traits.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int16_multi_array__type_support.hpp
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/laser_scan.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/laser_scan__struct.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/laser_scan__builder.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/laser_scan__traits.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__traits.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/laser_scan__type_support.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/imu.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__struct.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__builder.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__traits.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__type_support.hpp

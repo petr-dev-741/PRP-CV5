@@ -17,10 +17,8 @@ find_package(SDL2 REQUIRED)
 find_package(visualization_msgs REQUIRED)
 
 set(SRC
-        src/nodes/io_node.cpp
-        include/nodes/io_node.hpp
-        src/nodes/LineSensorNode.cpp
-        include/nodes/LineSensorNode.hpp
+        include/nodes/imu_node.hpp
+        src/nodes/imu_node.cpp
 )
 
 set(AMENT_LIBS rclcpp std_msgs sensor_msgs cv_bridge image_transport)

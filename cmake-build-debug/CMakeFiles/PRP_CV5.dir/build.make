@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/326/bin/cmake/linux/x64/bin/cmake
+CMAKE_COMMAND = /snap/clion/332/bin/cmake/linux/x64/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/326/bin/cmake/linux/x64/bin/cmake -E rm -f
+RM = /snap/clion/332/bin/cmake/linux/x64/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -83,46 +83,30 @@ CMakeFiles/PRP_CV5.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/PRP_CV5.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/korny/CLionProjects/PRP-CV5/src/main.cpp -o CMakeFiles/PRP_CV5.dir/src/main.cpp.s
 
-CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.o: CMakeFiles/PRP_CV5.dir/flags.make
-CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.o: /home/korny/CLionProjects/PRP-CV5/src/nodes/io_node.cpp
-CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.o: CMakeFiles/PRP_CV5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.o -MF CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.o.d -o CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.o -c /home/korny/CLionProjects/PRP-CV5/src/nodes/io_node.cpp
+CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.o: CMakeFiles/PRP_CV5.dir/flags.make
+CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.o: /home/korny/CLionProjects/PRP-CV5/src/nodes/imu_node.cpp
+CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.o: CMakeFiles/PRP_CV5.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.o -MF CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.o.d -o CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.o -c /home/korny/CLionProjects/PRP-CV5/src/nodes/imu_node.cpp
 
-CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/korny/CLionProjects/PRP-CV5/src/nodes/io_node.cpp > CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.i
+CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/korny/CLionProjects/PRP-CV5/src/nodes/imu_node.cpp > CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.i
 
-CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/korny/CLionProjects/PRP-CV5/src/nodes/io_node.cpp -o CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.s
-
-CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.o: CMakeFiles/PRP_CV5.dir/flags.make
-CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.o: /home/korny/CLionProjects/PRP-CV5/src/nodes/LineSensorNode.cpp
-CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.o: CMakeFiles/PRP_CV5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.o -MF CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.o.d -o CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.o -c /home/korny/CLionProjects/PRP-CV5/src/nodes/LineSensorNode.cpp
-
-CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/korny/CLionProjects/PRP-CV5/src/nodes/LineSensorNode.cpp > CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.i
-
-CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/korny/CLionProjects/PRP-CV5/src/nodes/LineSensorNode.cpp -o CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.s
+CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/korny/CLionProjects/PRP-CV5/src/nodes/imu_node.cpp -o CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.s
 
 # Object files for target PRP_CV5
 PRP_CV5_OBJECTS = \
 "CMakeFiles/PRP_CV5.dir/src/main.cpp.o" \
-"CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.o" \
-"CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.o"
+"CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.o"
 
 # External object files for target PRP_CV5
 PRP_CV5_EXTERNAL_OBJECTS =
 
 PRP_CV5: CMakeFiles/PRP_CV5.dir/src/main.cpp.o
-PRP_CV5: CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.o
-PRP_CV5: CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.o
+PRP_CV5: CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.o
 PRP_CV5: CMakeFiles/PRP_CV5.dir/build.make
 PRP_CV5: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.5.4d
 PRP_CV5: /usr/lib/x86_64-linux-gnu/libopencv_alphamat.so.4.5.4d
@@ -268,7 +252,7 @@ PRP_CV5: /opt/ros/humble/lib/librcpputils.so
 PRP_CV5: /opt/ros/humble/lib/librosidl_runtime_c.so
 PRP_CV5: /opt/ros/humble/lib/librcutils.so
 PRP_CV5: CMakeFiles/PRP_CV5.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable PRP_CV5"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/korny/CLionProjects/PRP-CV5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable PRP_CV5"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PRP_CV5.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

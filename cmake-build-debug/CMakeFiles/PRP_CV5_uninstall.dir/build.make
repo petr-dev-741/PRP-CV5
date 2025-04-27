@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/326/bin/cmake/linux/x64/bin/cmake
+CMAKE_COMMAND = /snap/clion/332/bin/cmake/linux/x64/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/326/bin/cmake/linux/x64/bin/cmake -E rm -f
+RM = /snap/clion/332/bin/cmake/linux/x64/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -67,7 +67,7 @@ include CMakeFiles/PRP_CV5_uninstall.dir/compiler_depend.make
 include CMakeFiles/PRP_CV5_uninstall.dir/progress.make
 
 CMakeFiles/PRP_CV5_uninstall:
-	/snap/clion/326/bin/cmake/linux/x64/bin/cmake -P /home/korny/CLionProjects/PRP-CV5/cmake-build-debug/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/snap/clion/332/bin/cmake/linux/x64/bin/cmake -P /home/korny/CLionProjects/PRP-CV5/cmake-build-debug/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 PRP_CV5_uninstall: CMakeFiles/PRP_CV5_uninstall
 PRP_CV5_uninstall: CMakeFiles/PRP_CV5_uninstall.dir/build.make

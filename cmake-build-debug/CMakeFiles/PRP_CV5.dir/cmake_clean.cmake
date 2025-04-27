@@ -1,10 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/PRP_CV5.dir/src/main.cpp.o"
   "CMakeFiles/PRP_CV5.dir/src/main.cpp.o.d"
-  "CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.o"
-  "CMakeFiles/PRP_CV5.dir/src/nodes/LineSensorNode.cpp.o.d"
-  "CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.o"
-  "CMakeFiles/PRP_CV5.dir/src/nodes/io_node.cpp.o.d"
+  "CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.o"
+  "CMakeFiles/PRP_CV5.dir/src/nodes/imu_node.cpp.o.d"
   "PRP_CV5"
   "PRP_CV5.pdb"
 )
