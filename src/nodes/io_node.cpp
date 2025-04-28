@@ -55,11 +55,19 @@ namespace nodes {
     }
 
     // #################################### MAIN LOOP ####################################
+    RobotPose pose = RobotPose();
     void IoNode::timer_callback() {
+        double uptime = (this->now() - start_time_).seconds();
+
+        if (uptime < 1) {
+            RCLCPP_INFO(this->get_logger(), "Uptime: %f", uptime);
+            RCLCPP_INFO(this->get_logger(), "Pose is: %f \t %f \t %f", pose.pos_x, pose.pos_y, pose.angle);
+            return;
+        }
         //RCLCPP_INFO(this->get_logger(), "Timer triggered. Publishing uptime...");
 
         // only P controller
-        double uptime = (this->now() - start_time_).seconds();
+
         //RCLCPP_INFO(this->get_logger(), "Time is: %f", uptime);
         double lineLeftCal = (lineLeft - lineSensorLimits[0]) / (lineSensorLimits[1] - lineSensorLimits[0]);
         double lineRightCal = (lineRight - lineSensorLimits[2]) / (lineSensorLimits[3] - lineSensorLimits[2]);
@@ -72,8 +80,14 @@ namespace nodes {
             speedRight = maxSpeed;
         }
 
-        speedLeft = 130;
-        speedRight = 130;
+        pose = calculatePositionAndRotation(encoderValues);
+        RCLCPP_INFO(this->get_logger(), "Pose is: %f \t %f \t %f", pose.pos_x, pose.pos_y, pose.angle);
+
+        double angle = calculateRotation();
+        RCLCPP_INFO(this->get_logger(), "angle %f", angle);
+
+        // speedLeft = 130;
+        // speedRight = 130;
 
         //RCLCPP_INFO(this->get_logger(), "Line sensors are: %hu \t %hu", lineLeft, lineRight);
 
@@ -82,18 +96,16 @@ namespace nodes {
         // motor_speed_publisher_->publish(msgMotorSpeeds);
         //RCLCPP_INFO(this->get_logger(), "Speeds are: %f \t %f", speedLeft, speedRight);
 
-        RobotPose pose = calculatePositionAndRotation(encoderValues);
-        // RCLCPP_INFO(this->get_logger(), "Pose is: %f \t %f \t %f", pose.pos_x, pose.pos_y, pose.angle);
     }
     void IoNode::on_lidar_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg) {
         lidarRanges = msg->ranges;
-        printf("newMeasure\n");
-        double front = getLidarRange(0, 20, 0);
-        double left = getLidarRange(90, 20, 0);
-        double back = getLidarRange(180, 20, 0);
-        double right = getLidarRange(270, 20, 0);
+        // printf("newMeasure\n");
+        // double front = getLidarRange(0, 20, 0);
+        // double left = getLidarRange(90, 20, 0);
+        // double back = getLidarRange(180, 20, 0);
+        // double right = getLidarRange(270, 20, 0);
         // RCLCPP_INFO(this->get_logger(), "Size: %lu", lidarRanges.size());
-        RCLCPP_INFO(this->get_logger(), "opt Front: %f Left: %f Back: %f Right: %f", front, left, back, right);
+        // RCLCPP_INFO(this->get_logger(), "opt Front: %f Left: %f Back: %f Right: %f", front, left, back, right);
         // RCLCPP_INFO(this->get_logger(), "raw Front: %f Left: %f Back: %f Right: %f", msg->ranges[0], msg->ranges[270], msg->ranges[540], msg->ranges[810]);
         // RCLCPP_INFO(this->get_logger(), "int Front: %f Left: %f Back: %f Right: %f", lidarRanges[0], lidarRanges[270], lidarRanges[540], lidarRanges[810]);
     }
@@ -103,7 +115,6 @@ namespace nodes {
         double distance = 0.0;
         if (angle > 0 && angle < 360)
             numOfPoints = angle * 3; // 1080/360
-        double sum = 0;
         double ranges[numOfPoints];
         for (int i = 0; i < numOfPoints; i++) {
             int index = static_cast<int>(round(midAngle * 3.0)-floor(numOfPoints/2.0))+i;
@@ -129,30 +140,75 @@ namespace nodes {
         else if (distance < minLidarDistance)
             distance = 0;
 
-
         return distance;
     }
 
     double IoNode::calculateRotation() {
-        double beta = 15;
+        double beta = 8;
         double betaRad = beta/180*M_PI;
         int points = 5;
 
-        double left_b = getLidarRange(90+beta, points, 0);
+        double angle_left = 0;
+        double angle_right = 0;
+
+        bool valid_r = true;
+        bool valid_l = true;
+
+        double left_b = getLidarRange(90-beta, points, 0);
         double left_m = getLidarRange(90, points, 0);
-        double left_f = getLidarRange(90-beta, points, 0);
+        double left_f = getLidarRange(90+beta, points, 0);
 
         double right_b = getLidarRange(270+beta, points, 0);
         double right_m = getLidarRange(270, points, 0);
         double right_f = getLidarRange(270-beta, points, 0);
 
-        double y_fm = sqrt(left_m*left_m + left_f*left_f - 2+left_f*left_m*cos(betaRad));
-        double y_bm = sqrt(left_m*left_m + left_b*left_b - 2+left_b*left_m*cos(betaRad));
+        if (right_b < 0 or right_m < 0 or right_f < 0)
+            valid_r = false;
 
-        double angle_lf = asin(left_f/y_fm*sin(betaRad))*180/M_PI-90;
-        double angle_lb = 90-asin(left_b/y_bm*sin(betaRad))*180/M_PI;
+        if (left_b < 0 or left_m < 0 or left_f < 0)
+            valid_l = false;
 
-        RCLCPP_INFO(this->get_logger(), "front %f,  back %f", angle_lf, angle_lb);
+        if (valid_l) {
+            double y_fml = sqrt(left_m*left_m + left_f*left_f - 2*left_f*left_m*cos(betaRad));
+            double y_bml = sqrt(left_m*left_m + left_b*left_b - 2*left_b*left_m*cos(betaRad));
+
+            double angle_lf = asin(left_f/y_fml*sin(betaRad))*180/M_PI-90;
+            double angle_lb = 90-asin(left_b/y_bml*sin(betaRad))*180/M_PI;
+
+            // RCLCPP_INFO(this->get_logger(), "front %f,  middle %f, back %f, front_dist %f, back_dist %f", left_f, left_m, left_b, y_fm, y_bm);
+            // RCLCPP_INFO(this->get_logger(), "front %f,  back %f", angle_lf, angle_lb);
+
+            if (angle_lb+angle_lf > 3)
+                valid_l = false;
+
+            angle_left = (angle_lb-angle_lf)/2;
+        }
+
+        if (valid_r) {
+            double y_fmr = sqrt(right_m*right_m + right_f*right_f - 2*right_f*right_m*cos(betaRad));
+            double y_bmr = sqrt(right_m*right_m + right_b*right_b - 2*right_b*right_m*cos(betaRad));
+
+            double angle_rf = asin(right_f/y_fmr*sin(betaRad))*180/M_PI-90;
+            double angle_rb = 90-asin(right_b/y_bmr*sin(betaRad))*180/M_PI;
+
+            // RCLCPP_INFO(this->get_logger(), "front %f,  middle %f, back %f, front_dist %f, back_dist %f", right_f, right_m, right_b, y_fm, y_bm);
+            // RCLCPP_INFO(this->get_logger(), "front %f,  back %f", angle_lf, angle_lb);
+
+            if (angle_rb+angle_rf > 3)
+                valid_r = false;
+
+            angle_right = (angle_rb-angle_rf)/2;
+        }
+        if (valid_l and valid_r)
+            return (angle_left + angle_right)/2;
+
+        if (valid_l)
+            return angle_left;
+
+        if (valid_r)
+            return angle_right;
+
+        return 0;
     }
 
     int IoNode::get_button_pressed() const {
@@ -180,29 +236,40 @@ namespace nodes {
     double robotRotation = 0.0;
     uint16_t pulsesPerRotation = 576;// 48*3*2*2
     double deltaEncoder[2] = {0.0, 0.0};
-    double pValue[2] = {0.0, 0.0};
+    int pValue[2] = {0, 0};
 
     RobotPose IoNode::calculatePositionAndRotation(const int encoderValues[2]) {
-        deltaEncoder[0] = -(encoderValues[0] - pValue[0]);
-        deltaEncoder[1] = encoderValues[1] - pValue[1];
+        if (pValue[0] == 0) {
+            pValue[0] = encoderValues[0];
+            pValue[1] = encoderValues[1];
+        }
+        deltaEncoder[0] = encoderValues[0] - pValue[0];
+        deltaEncoder[1] = -(encoderValues[1] - pValue[1]);
+
+        // RCLCPP_INFO(this->get_logger(), "dataLeft %f, dataRight %f", deltaEncoder[0], deltaEncoder[1]);
+
         omega_l =  deltaEncoder[0] / pulsesPerRotation * 2*M_PI;
         omega_r = deltaEncoder[1] / pulsesPerRotation * 2*M_PI;
+
+        // RCLCPP_INFO(this->get_logger(), "omegaL %f, omegaR %f", omega_l, omega_r);
 
         double delta_x = wheelRadius * (omega_r + omega_l) * cos(robotRotation);
         double delta_y = wheelRadius * (omega_r + omega_l) * sin(robotRotation);
         double delta_phi = wheelRadius/wheelDistance * (omega_r - omega_l);
 
+        // RCLCPP_INFO(this->get_logger(), "delta_x %f, delta_y %f, delta_phi %f", delta_x, delta_y, delta_phi);
+
         robotPosition[0] = robotPosition[0] + delta_x;
         robotPosition[1] = robotPosition[1] + delta_y;
         robotRotation = robotRotation + delta_phi;
 
+        pValue[0] = encoderValues[0];
+        pValue[1] = encoderValues[1];
+
         RobotPose pose;
         pose.pos_x = robotPosition[0];
         pose.pos_y = robotPosition[1];
-        pose.angle = robotRotation;
-
-        pValue[0] = encoderValues[0];
-        pValue[1] = encoderValues[1];
+        pose.angle = robotRotation*180/M_PI;
 
         return pose;
     }
