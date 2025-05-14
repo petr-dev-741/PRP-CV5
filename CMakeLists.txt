@@ -17,8 +17,10 @@ find_package(SDL2 REQUIRED)
 find_package(visualization_msgs REQUIRED)
 
 set(SRC
-        include/nodes/imu_node.hpp
-        src/nodes/imu_node.cpp
+        include/nodes/maze_node.hpp
+        src/nodes/maze_node.cpp
+        include/algorithms/pid.hpp
+        include/algorithms/aruco_detector.hpp
 )
 
 set(AMENT_LIBS rclcpp std_msgs sensor_msgs cv_bridge image_transport)

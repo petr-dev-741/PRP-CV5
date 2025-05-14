@@ -13,6 +13,7 @@ namespace Topic {
     const std::string imu = "/bpc_prp_robot/imu";
     const std::string lidar = "/bpc_prp_robot/lidar";
     const std::string ultrasounds = "/bpc_prp_robot/ultrasounds";
+    const std::string camera = "/bpc_prp_robot/camera/compressed";
 };
 
 namespace Frame {
