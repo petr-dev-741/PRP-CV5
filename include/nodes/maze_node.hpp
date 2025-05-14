@@ -34,6 +34,7 @@ namespace nodes {
         int zed = -1;
         int zatacka = -1;
         int krizovatka = -1;
+        int stred_zatacky = 0;
 
         u_char frontLed = 255;
         u_char backLed = 255;
@@ -55,11 +56,11 @@ namespace nodes {
 
         std::vector<float> lidarRanges;
         int lidarMaxIndex = 1079;
-        double maxWallDistance = 0.4;
+        double maxWallDistance = 0.7;
         double minLidarDistance = 0.12;
 
-        algorithms::Pid regulator_prava_stena = algorithms::Pid(3,0,0.2);
-        algorithms::Pid regulator_leva_stena = algorithms::Pid(3,0,0.2);
+        algorithms::Pid regulator_prava_stena = algorithms::Pid(2.5,0,0.2);
+        algorithms::Pid regulator_leva_stena = algorithms::Pid(2.5,0,0.2);
         algorithms::Pid regulator_otaceni = algorithms::Pid(0.1,0,0.2);
 
         algorithms::ArucoDetector detektor = algorithms::ArucoDetector();

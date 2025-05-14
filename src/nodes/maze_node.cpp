@@ -173,33 +173,44 @@ namespace nodes {
             zed = 1;
         else zed = 0;*/
         ultrasound = msg->data[1];
+        if (msg->data[0] <= 30 and msg->data[2] <= 30) {
+            stred_zatacky = 1;
+        } else {
+            stred_zatacky = 0;
+        }
         //RCLCPP_INFO(this->get_logger(), "Left: %d, Straight: %d, Right: %d", msg->data[0], msg->data[1], msg->data[2]);
     }
 
     void MazeNode::lidar_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg) {
         lidarRanges = msg->ranges;
-        front = getLidarRange(0, 20, 0);
-        left = getLidarRange(90, 20, 0);
-        back = getLidarRange(180, 20, 0);
-        right = getLidarRange(270, 20, 0);
+        front = getLidarRange(0, 10, 0);
+        left = getLidarRange(90, 10, 0);
+        back = getLidarRange(180, 10, 0);
+        right = getLidarRange(270, 10, 0);
 
-        if (front < 0.20 or ultrasound < 20) {
-            zed = 1;
-        } else zed = 0;
-
-        if (left >= 0.4)
+        if (left >= 0.5)
             zatacka = 1;
-        if (right >= 0.4)
+        if (right >= 0.5)
             zatacka = 2;
-        if (left <= 0.4 and right <= 0.4 and front <= 0.25) {
+        if (left <= 0.5 and right <= 0.5 and front <= 0.25) {
             zatacka = 3;
             zed = 1;
         }
-        if ((left >= 0.4 and right >= 0.4 and back >= 0.4) or (left >= 0.4 and front >= 0.4 and back >= 0.4) or (
-                front >= 0.4 and right >= 0.4 and back >= 0.4) or (
-                left >= 0.4 and right >= 0.4 and front >= 0.4)) {
+        if ((left >= 0.5 and right >= 0.5 and back >= 0.5) or (
+                left >= 0.5 and right >= 0.5 and front >= 0.5)) {
             zatacka = 0; // krizovatka
         }
+        if ((left >= 0.5 and front >= 0.5 and back >= 0.5) or (
+                front >= 0.5 and right >= 0.5 and back >= 0.5)) {
+            zatacka = 0; // krizovatka
+            if ((front <= 0.62) and krizovatka % 10 != 0 and krizovatka != -1)
+                zed = 1;
+        }
+        if (front < 0.20 or ultrasound < 20) {
+            zed = 1;
+        }
+
+        RCLCPP_INFO(this->get_logger(), "front: %f", front);
 
 
         auto rgb_leds = std_msgs::msg::UInt8MultiArray();
@@ -265,16 +276,16 @@ namespace nodes {
             case 1:
                 //if (abs(yaw) > 7) stav = 3;
                 if (left < 0.5 and right < 0.5) {
-                    speedRight = maxSpeed - (maxSpeed - noSpeed) * (-regulator_prava_stena.step(0.2 - right, dt));
-                    speedLeft = maxSpeed - (maxSpeed - noSpeed) * (-regulator_leva_stena.step(0.2 - left, dt));
+                    speedRight = maxSpeed - (maxSpeed - noSpeed) * (-regulator_prava_stena.step(left - right, dt));
+                    speedLeft = maxSpeed - (maxSpeed - noSpeed) * (-regulator_leva_stena.step(right - left, dt));
                     //RCLCPP_INFO(this->get_logger(), "Mezi zdmi, L: %f, R: %f", -regulator_leva_stena.step(0.2 - left, dt), -regulator_prava_stena.step(0.2 - right, dt));
-                } else if ((right != 0.2) and right < 0.5) {
-                    speedLeft = maxSpeed - (maxSpeed - noSpeed) * (regulator_prava_stena.step(0.2 - right, dt));
-                    speedRight = maxSpeed - (maxSpeed - noSpeed) * (-regulator_prava_stena.step(0.2 - right, dt));
+                } else if ((right != 0.20) and right < 0.5) {
+                    speedLeft = maxSpeed - (maxSpeed - noSpeed) * (regulator_prava_stena.step(0.20 - right, dt));
+                    speedRight = maxSpeed - (maxSpeed - noSpeed) * (-regulator_prava_stena.step(0.20 - right, dt));
                     //RCLCPP_INFO(this->get_logger(), "podle prave, L: %f, R: %f", regulator_prava_stena.step(0.2 - right, dt), -regulator_prava_stena.step(0.2 - right, dt));
-                } else if ((left != 0.2) and left < 0.5) {
-                    speedLeft = maxSpeed - (maxSpeed - noSpeed) * (-regulator_leva_stena.step(0.2 - left, dt));
-                    speedRight = maxSpeed - (maxSpeed - noSpeed) * (regulator_leva_stena.step(0.2 - left, dt));
+                } else if ((left != 0.20) and left < 0.5) {
+                    speedLeft = maxSpeed - (maxSpeed - noSpeed) * (-regulator_leva_stena.step(0.20 - left, dt));
+                    speedRight = maxSpeed - (maxSpeed - noSpeed) * (regulator_leva_stena.step(0.20 - left, dt));
                     //RCLCPP_INFO(this->get_logger(), "podle leve, L: %f, R: %f", -regulator_leva_stena.step(0.2 - left, dt), regulator_leva_stena.step(0.2 - left, dt));
                 } else {
                     speedLeft = maxSpeed;
@@ -318,6 +329,7 @@ namespace nodes {
                 }
                 break;
             case 3:
+                zed = 0;
                 regulator_otaceni.step(yaw, dt);
                 speedLeft = 127 + round(regulator_otaceni.step(yaw, dt)) + std::copysign(2, yaw);
                 speedRight = 127 - round(regulator_otaceni.step(yaw, dt)) - std::copysign(2, yaw);
@@ -333,6 +345,6 @@ namespace nodes {
                 break;
         }
         //RCLCPP_INFO(this->get_logger(), "front: %f, back: %f, left: %f, right: %f", front, back, left, right);
-        RCLCPP_INFO(this->get_logger(), "zatacka %d", zatacka);
+        //RCLCPP_INFO(this->get_logger(), "zatacka %d", zatacka);
     }
 }
