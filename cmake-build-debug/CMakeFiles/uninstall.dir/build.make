@@ -53,10 +53,10 @@ RM = /snap/clion/341/bin/cmake/linux/x64/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/korny/CLionProjects/PRP-CV5
+CMAKE_SOURCE_DIR = "/home/petr/Stažené/PRP-CV5 (3)"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/korny/CLionProjects/PRP-CV5/cmake-build-debug
+CMAKE_BINARY_DIR = "/home/petr/Stažené/PRP-CV5 (3)/cmake-build-debug"
 
 # Utility rule file for uninstall.
 
@@ -81,6 +81,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/korny/CLionProjects/PRP-CV5/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/korny/CLionProjects/PRP-CV5 /home/korny/CLionProjects/PRP-CV5 /home/korny/CLionProjects/PRP-CV5/cmake-build-debug /home/korny/CLionProjects/PRP-CV5/cmake-build-debug /home/korny/CLionProjects/PRP-CV5/cmake-build-debug/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd "/home/petr/Stažené/PRP-CV5 (3)/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/petr/Stažené/PRP-CV5 (3)" "/home/petr/Stažené/PRP-CV5 (3)" "/home/petr/Stažené/PRP-CV5 (3)/cmake-build-debug" "/home/petr/Stažené/PRP-CV5 (3)/cmake-build-debug" "/home/petr/Stažené/PRP-CV5 (3)/cmake-build-debug/CMakeFiles/uninstall.dir/DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/uninstall.dir/depend
 

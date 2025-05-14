@@ -57,10 +57,10 @@ RM = /snap/clion/341/bin/cmake/linux/x64/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/korny/CLionProjects/PRP-CV5
+CMAKE_SOURCE_DIR = "/home/petr/Stažené/PRP-CV5 (3)"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/korny/CLionProjects/PRP-CV5/cmake-build-debug
+CMAKE_BINARY_DIR = "/home/petr/Stažené/PRP-CV5 (3)/cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,14 +142,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/korny/CLionProjects/PRP-CV5/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/korny/CLionProjects/PRP-CV5/cmake-build-debug/CMakeFiles /home/korny/CLionProjects/PRP-CV5/cmake-build-debug/tests//CMakeFiles/progress.marks
-	cd /home/korny/CLionProjects/PRP-CV5/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/korny/CLionProjects/PRP-CV5/cmake-build-debug/CMakeFiles 0
+	cd "/home/petr/Stažené/PRP-CV5 (3)/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/petr/Stažené/PRP-CV5 (3)/cmake-build-debug/CMakeFiles" "/home/petr/Stažené/PRP-CV5 (3)/cmake-build-debug/tests//CMakeFiles/progress.marks"
+	cd "/home/petr/Stažené/PRP-CV5 (3)/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/petr/Stažené/PRP-CV5 (3)/cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/korny/CLionProjects/PRP-CV5/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/clean
+	cd "/home/petr/Stažené/PRP-CV5 (3)/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -158,17 +158,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/korny/CLionProjects/PRP-CV5/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
+	cd "/home/petr/Stažené/PRP-CV5 (3)/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/korny/CLionProjects/PRP-CV5/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
+	cd "/home/petr/Stažené/PRP-CV5 (3)/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/korny/CLionProjects/PRP-CV5/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd "/home/petr/Stažené/PRP-CV5 (3)/cmake-build-debug" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -195,6 +195,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/korny/CLionProjects/PRP-CV5/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd "/home/petr/Stažené/PRP-CV5 (3)/cmake-build-debug" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

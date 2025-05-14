@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/korny/CLionProjects/PRP-CV5/src/main.cpp" "CMakeFiles/PRP_CV5.dir/src/main.cpp.o" "gcc" "CMakeFiles/PRP_CV5.dir/src/main.cpp.o.d"
-  "/home/korny/CLionProjects/PRP-CV5/src/nodes/maze_node.cpp" "CMakeFiles/PRP_CV5.dir/src/nodes/maze_node.cpp.o" "gcc" "CMakeFiles/PRP_CV5.dir/src/nodes/maze_node.cpp.o.d"
+  "/home/petr/Stažené/PRP-CV5 (3)/src/main.cpp" "CMakeFiles/PRP_CV5.dir/src/main.cpp.o" "gcc" "CMakeFiles/PRP_CV5.dir/src/main.cpp.o.d"
+  "/home/petr/Stažené/PRP-CV5 (3)/src/nodes/maze_node.cpp" "CMakeFiles/PRP_CV5.dir/src/nodes/maze_node.cpp.o" "gcc" "CMakeFiles/PRP_CV5.dir/src/nodes/maze_node.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
